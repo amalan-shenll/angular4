@@ -3,20 +3,28 @@ import { NgModule } from '@angular/core';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { Routes, RouterModule } from '@angular/router';
 
 
 import { AppComponent } from './app.component';
+import { StartComponent } from './start/start.component';
 
+const routes: Routes = [
+  { path: '', pathMatch:'full',redirectTo:'start' },
+  { path: 'start', component: StartComponent }
+];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    StartComponent
   ],
   imports: [
     BrowserModule,
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
