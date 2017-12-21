@@ -8,16 +8,19 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { StartComponent } from './start/start.component';
+import { MenuComponent } from './menu/menu.component';
 
 const routes: Routes = [
   { path: '', pathMatch:'full',redirectTo:'start' },
-  { path: 'start', component: StartComponent }
+  { path: 'start', component: StartComponent },
+  { path: 'menu', component: MenuComponent }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    StartComponent
+    StartComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,

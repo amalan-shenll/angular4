@@ -1,0 +1,15 @@
+.menu-holder{
+  .list-holder{
+    width:300px;
+    margin: auto;
+    border: 1px solid red;
+    ul{
+      li{
+        font-weight: bold;
+        a{
+          text-decoration-line: none;
+        }
+      }
+    }
+  }
+}
