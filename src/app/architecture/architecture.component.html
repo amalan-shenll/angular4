@@ -1,3 +1,65 @@
-<p>
-  architecture works!
-</p>
+<div class="container">
+  <h3 class="text-danger">Angular Architecture</h3>
+  <img src="assets/images/angular_architecture.png" class="img-responsive" alt="Responsive image">
+  <h4 class="text-danger text-italic">Module</h4>
+  <ul>
+    <li>Angular apps are modular and Angular has its own modularity system called <em><b>NgModules.</b></em></li>
+    <li>Every Angular app has at least one NgModule class, the root module, conventionally named <b>AppModule.</b></li>
+    <li>An NgModule, whether a root or feature, is a class with an <code>@NgModule</code><span data-toggle="tooltip" title="Decorators are functions that modify JavaScript classes.">decorator</span>.</li>
+  </ul>
+  <h4><code>@NgModule</code> properties:</h4>
+  <ul>
+    <li><strong>declarations</strong> - the view classes that belong to this module. Angular has three kinds of view classes: components, directives, and pipes.</li>
+    <div class="alert alert-warning">
+      <strong>Components</strong> are simply classes that are designated as a component with the help of a component decorator. <br>
+      <strong>Directives</strong> modify the provision of the DOM by adding and deleting elements and also alter the appearance or behavior of certain elements or components.<br>
+      <strong>Pipes</strong> to transform and format data right from your templates.
+    </div>
+    <li><strong>exports</strong> - the subset of declarations that should be visible and usable in the component templates of other modules.</li>
+    <li><strong>imports</strong> - other modules whose exported classes are needed by component templates declared in this module.</li>
+    <li><strong>providers</strong> - creators of services that this module contributes to the global collection of services; they become accessible in all parts of the app.</li>
+    <li><strong>bootstrap</strong> - the main application view, called the root component, that hosts all other app views. Only the root module should set this bootstrap property.</li>
+  </ul>
+  <h4 class="text-danger">Angular libraries</h4>
+  <ul>
+    <li>Angular ships as a collection of JavaScript modules.</li>
+    <li>Each Angular library name begins with the <code>@angular</code> prefix.</li>
+  </ul>
+  <h4 class="text-danger">Components</h4>
+  <ul>
+    <li>It controls a screen(View).</li>
+  </ul>
+  <h4 class="text-danger">Templates</h4>
+  <ul>
+    <li>View that used by a component.</li>
+  </ul>
+  <h4 class="text-danger">Metadata</h4>
+  <ul>
+    <li>Metadata tells Angular how to process a class. <code>@component, @Injectable, @Input, and @Output</code> are metadata decoratives</li>
+  </ul>
+  <h4 class="text-danger">{{dataBinding}}</h4>
+  <ul>
+    <li>A mechanism for coordinating parts of a template with parts of a component</li>
+    <img [src]="dataImg" class="img-responsive" alt="Responsive image">
+    Enter name: <input [(ngModel)]="name"/>Name:{{name}}<br>
+    <button type="button" class="btn btn-primary" (click)="sayHello()">Say Hello</button>    
+  </ul>
+  <h4 class="text-danger">Directives</h4>
+  <ul>
+    <li>Two other kinds of directives exist: <em>structural</em> and <em>attribute</em> directives.</li>
+    <li *ngIf="display"><strong>Build in structural directives</strong> 
+      <ul>
+        <li *ngFor="let item of angulars">{{item}}</li>
+      </ul>
+    </li>
+  </ul>
+  <h4 class="text-danger">Services</h4>
+  <ul>
+    <li>ng g service <em>service name</em></li>
+  </ul>
+  <h4 class="text-danger">Dependency injection</h4>
+  <ul>
+    <li>Dependency injection is a way to supply a new instance of a class with the fully-formed dependencies it requires.</li>
+  </ul>
+  <a href="/menu" class="btn btn-primary btn-sm active" role="button">To Menu</a>
+</div>

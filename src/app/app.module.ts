@@ -4,6 +4,8 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { Routes, RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from "@angular/http";
 
 
 import { AppComponent } from './app.component';
@@ -20,6 +22,8 @@ import { AttributeDirectivesComponent } from './attribute-directives/attribute-d
 import { StructuralDirectivesComponent } from './structural-directives/structural-directives.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { AnimationsComponent } from './animations/animations.component';
+
+import { ApicallerService } from "./apicaller.service";
 
 const routes: Routes = [
   { path: '', pathMatch:'full',redirectTo:'start' },
@@ -60,9 +64,11 @@ const routes: Routes = [
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
     ModalModule.forRoot(),
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    FormsModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [ApicallerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
