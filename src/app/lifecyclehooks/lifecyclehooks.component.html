@@ -1,3 +1,32 @@
-<p>
-  lifecyclehooks works!
-</p>
+<div class="container">
+  <h3 class="text-danger">Lifecycle Hooks</h3>
+  <h4 class="text-success">ngOnInit()</h4>
+  <p>
+    Runs on component initialization.
+  </p>
+  <h4 class="text-success">ngDoCheck()</h4>
+  <p>
+      Called during every change detection run, immediately after ngOnChanges() and ngOnInit().
+  </p>
+  <h4 class="text-success">ngAfterContentInit()</h4>
+  <p>
+    Called once after the first ngDoCheck()
+  </p>  
+  <h4 class="text-success">ngAfterContentChecked()</h4>
+  <p>
+    Called after the ngAfterContentInit() and every subsequent ngDoCheck().
+  </p>
+  <h4 class="text-success">ngAfterViewInit()</h4>
+  <p>
+    Called once after the first ngAfterContentChecked()
+  </p> 
+  <h4 class="text-success">ngAfterViewChecked()</h4>
+  <p>
+    Called after the ngAfterViewInit and every subsequent ngAfterContentChecked()
+  </p>  
+  <h4 class="text-success">ngOnDestroy()</h4>
+  <p>
+    Called just before the component distroys.
+  </p> 
+  <button (click)="back()" class="btn btn-primary btn-sm active" role="button">Back To Menu</button>
+</div>
