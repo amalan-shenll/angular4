@@ -1,3 +1,28 @@
-<p>
-  templatesyntax works!
-</p>
+<div class="container">
+  <h3 class="text-danger">Template Syntax</h3>
+  <h4 class="text-success">Interpolation</h4>
+  <p>
+    <code ngNonBindable>
+      &lt;h4&gt;{{dataBinding}}&lt;/h4&gt;
+    </code>
+  </p>
+  <h4 class="text-success">Template expressions</h4>
+  <p>
+    <code ngNonBindable>
+      &lt;img [src]="dataImg" class="img-responsive" alt="Responsive image"/&gt;
+      <br>
+      dataImg="path to img"
+    </code>
+  </p>
+  <h4 class="text-success">Template statement</h4>
+  <p>
+    <code ngNonBindable>
+      &lt;button (click)="showImg()"&gt; show img &lt;/button&gt;
+      <br>
+      showImg()&#123;
+        this.showimg = true;
+      }
+    </code>
+  </p>  
+  <button (click)="back()" class="btn btn-primary btn-sm active" role="button">Back To Menu</button>
+</div>
