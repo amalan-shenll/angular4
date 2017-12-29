@@ -1,3 +1,103 @@
-<p>
-  pipes works!
-</p>
+<div class="container">
+  <h2 class="text-danger">Pipes</h2>
+  <h5>Topic Stared: {{currentTimeStamp | timeAgo}}</h5>
+  <p>A pipe takes in data as input and transforms it to a desired output.</p>
+  <strong>Eg:</strong>
+  <code ngNonBindable>
+    {{ today | date }}
+  </code>=>
+  {{ today | date }}
+  <h3 class="text-success">Built-in pipes</h3>
+  <h4 class="text-info">DatePipe</h4>
+  <code ngNonBindable>
+    {{ today | date:'medium' }}
+  </code> =>
+  {{ today | date:'medium' }}
+  <h5 class="text-primary">usage format</h5>
+  <ul>
+    <li>'short': equivalent to 'M/d/yy, h:mm a' (e.g. 6/15/15, 9:03 AM)</li>
+    <li>'medium': equivalent to 'MMM d, y, h:mm:ss a' (e.g. Jun 15, 2015, 9:03:01 AM)</li>
+    <li>'long': equivalent to 'MMMM d, y, h:mm:ss a z' (e.g. June 15, 2015 at 9:03:01 AM GMT+1)</li>
+    <li>'full': equivalent to 'EEEE, MMMM d, y, h:mm:ss a zzzz' (e.g. Monday, June 15, 2015 at 9:03:01 AM GMT+01:00)</li>
+    <li>'shortDate': equivalent to 'M/d/yy' (e.g. 6/15/15)</li>
+    <li>'mediumDate': equivalent to 'MMM d, y' (e.g. Jun 15, 2015)</li>
+    <li>'longDate': equivalent to 'MMMM d, y' (e.g. June 15, 2015)</li>
+    <li>'fullDate': equivalent to 'EEEE, MMMM d, y' (e.g. Monday, June 15, 2015)</li>
+    <li>'shortTime': equivalent to 'h:mm a' (e.g. 9:03 AM)</li>
+    <li>'mediumTime': equivalent to 'h:mm:ss a' (e.g. 9:03:01 AM)</li>
+    <li>'longTime': equivalent to 'h:mm:ss a z' (e.g. 9:03:01 AM GMT+1)</li>
+    <li>'fullTime': equivalent to 'h:mm:ss a zzzz' (e.g. 9:03:01 AM GMT+01:00)</li>
+  </ul>
+  
+  <h4 class="text-info">UpperCasePipe</h4>
+  <code ngNonBindable>
+    {{ name | uppercase }}
+  </code> =>
+  {{ name | uppercase }}
+
+  <h4 class="text-info">LowerCasePipe</h4>
+  <code ngNonBindable>
+    {{ name | lowercase }}
+  </code> =>
+  {{ name | lowercase }} 
+
+  <h4 class="text-info">CurrencyPipe</h4>
+  <code ngNonBindable>
+    {{ price | currency }}
+  </code> =>
+  {{ price | currency }}
+  <br>
+  <code ngNonBindable>
+    {{ price | currency:'INR':'symbol':'.2-4' }}
+  </code> =>
+  {{ price | currency:'INR':'symbol':'.2-4' }} 
+  
+  <h4 class="text-info">PercentPipe</h4>
+  <code ngNonBindable>
+    {{ tax | percent }}
+  </code> =>
+  {{ tax | percent }}
+
+
+  <h3 class="text-success">Chaining pipes</h3>
+  <code ngNonBindable>
+    {{ today | date:'medium' | uppercase }}
+  </code> =>
+  {{ today | date:'medium' | uppercase }}
+
+  <h3 class="text-success">Custom pipes</h3>
+  <p>ng g pipe pipename</p>
+  <code ngNonBindable>
+    {{ radius | areaOfCircle }}
+  </code> =>
+  {{ radius | areaOfCircle }}
+  <h4 class="text-info">Array without filter</h4>
+  <ul>
+    <li *ngFor="let student of students">
+      {{student.name}} | {{student.pass}}
+    </li>
+  </ul>
+  <h4 class="text-info">Filtering on array</h4>
+  <ul>
+    <li *ngFor="let student of students | trueOnly">
+      {{student.name}} | {{student.pass}}
+    </li>
+  </ul>
+  <h4 class="text-info">Using Slice</h4>
+  <ul>
+    <li *ngFor="let student of students | slice:0:3">
+      {{student.name}} | {{student.pass}}
+    </li>
+  </ul>
+
+  <h3 class="text-success">Pure vs Impure pipes</h3>
+  <h4 class="text-info">Pure pipes</h4>
+  <ul>
+    <li>Ouput changes based on input change</li>
+  </ul>
+  <h4 class="text-info">Impure pipes</h4>
+  <ul>
+    <li>Ouput changes doesn't based on input change</li>
+  </ul>
+  <button (click)="back()" class="btn btn-primary btn-sm active" role="button">Back To Menu</button>
+</div>
