@@ -24,6 +24,12 @@ import { PipesComponent } from './pipes/pipes.component';
 import { AnimationsComponent } from './animations/animations.component';
 
 import { ApicallerService } from "./apicaller.service";
+import { AreaOfCirclePipe } from './area-of-circle.pipe';
+import { TrueOnlyPipe } from './true-only.pipe';
+import { TimeAgoPipe } from 'time-ago-pipe';
+
+//for angular animations
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const routes: Routes = [
   { path: '', pathMatch:'full',redirectTo:'start' },
@@ -57,7 +63,10 @@ const routes: Routes = [
     AttributeDirectivesComponent,
     StructuralDirectivesComponent,
     PipesComponent,
-    AnimationsComponent
+    AnimationsComponent,
+    AreaOfCirclePipe,
+    TrueOnlyPipe,
+    TimeAgoPipe
   ],
   imports: [
     BrowserModule,
@@ -66,7 +75,8 @@ const routes: Routes = [
     ModalModule.forRoot(),
     RouterModule.forRoot(routes),
     FormsModule,
-    HttpModule
+    HttpModule, 
+    BrowserAnimationsModule
   ],
   providers: [ApicallerService],
   bootstrap: [AppComponent]

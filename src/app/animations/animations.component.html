@@ -1,3 +1,33 @@
-<p>
-  animations works!
-</p>
+<div class="container">
+  <h2 class="text-danger">Animation in angular</h2>
+  <p>Angular animations are built on top of the standard Web Animations API and run natively on browsers that support it.</p>
+  <h3 class="text-success">How to do it?</h3>
+  <ol>
+    <li [@liState]="liState" (click)="toggleState()">
+      Add 
+      <code ngNonBindable>import &#123; BrowserAnimationsModule } from '@angular/platform-browser/animations';</code>
+      in app.module.ts header section.
+    </li>
+    <li [@liState]="liState" (click)="toggleState()">
+      Add <code ngNonBindable> imports: [ .., BrowserAnimationsModule ]</code>
+      under @ngModule
+    </li>
+    <li [@liState]="liState" (click)="toggleState()">
+      import
+      <code ngNonBindable>
+          import &#123;
+            trigger,
+            state,
+            style,
+            animate,
+            transition
+          } from '@angular/animations';
+      </code>
+      in a component to use animation.
+    </li>
+    <li [@liState]="liState" (click)="toggleState()">
+      Add animation code under @Component section in respective component
+    </li>
+  </ol>
+  <button (click)="back()" class="btn btn-primary btn-sm active" role="button">Back To Menu</button>
+</div>
