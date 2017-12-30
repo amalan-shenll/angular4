@@ -39,6 +39,7 @@ import { CompBComponent } from './comp-b/comp-b.component';
 import { CompCComponent } from './comp-c/comp-c.component';
 import { CompLoaderComponent } from './comp-loader/comp-loader.component';
 import { CompDirective } from './comp.directive';
+import { HighlightDirective } from './highlight.directive';
 
 const routes: Routes = [
   { path: '', pathMatch:'full',redirectTo:'start' },
@@ -84,7 +85,8 @@ const routes: Routes = [
     CompBComponent,
     CompCComponent,
     CompLoaderComponent,
-    CompDirective
+    CompDirective,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
