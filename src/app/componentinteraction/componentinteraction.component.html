@@ -1,3 +1,26 @@
-<p>
-  componentinteraction works!
-</p>
+<div class="container">
+  <h2 class="text-danger">Component Interaction</h2>
+  <p>Passing data from parent to child component and vice versa.</p>
+  <h3 class="text-success">1) Parent to child communication via Input()</h3>
+  <h3 class="text-success">2) Child to Parent communication via Output() & EventEmitter</h3>
+  <div class="row">
+    <app-my-view-child 
+      class="col-sm-6 col-md-4" 
+      *ngFor="let color of colorCode" 
+      [colorcode]="color"
+      (clickColor)="showColorInParent($event)"
+      >
+    </app-my-view-child>
+  </div>
+  <h3 class="text-success">3) Child to Parent communication via ViewChild()</h3>
+  <p>
+    Parent Message: {{parentMsg}}
+  </p>
+  <app-another-child></app-another-child>
+  <h3 class="text-success">4) Parent to Sibling communication via Service</h3>
+  <p>
+    Sibling Message: {{siblingMsg}}<br>
+    <a routerLink="/sibling">Go To Sibling</a>
+  </p>
+
+</div>

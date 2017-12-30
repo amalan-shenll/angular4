@@ -24,12 +24,16 @@ import { PipesComponent } from './pipes/pipes.component';
 import { AnimationsComponent } from './animations/animations.component';
 
 import { ApicallerService } from "./apicaller.service";
+import { InteractionService } from "./interaction.service";
 import { AreaOfCirclePipe } from './area-of-circle.pipe';
 import { TrueOnlyPipe } from './true-only.pipe';
 import { TimeAgoPipe } from 'time-ago-pipe';
 
 //for angular animations
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MyViewChildComponent } from './my-view-child/my-view-child.component';
+import { AnotherChildComponent } from './another-child/another-child.component';
+import { SiblingComponent } from './sibling/sibling.component';
 
 const routes: Routes = [
   { path: '', pathMatch:'full',redirectTo:'start' },
@@ -45,7 +49,8 @@ const routes: Routes = [
   { path: "attributeDirectives", component: AttributeDirectivesComponent},
   { path: "structuralDirectives", component: StructuralDirectivesComponent},
   { path: "pipes", component: PipesComponent},
-  { path: "animations", component: AnimationsComponent}
+  { path: "animations", component: AnimationsComponent},
+  { path: "sibling", component: SiblingComponent}
 ];
 
 @NgModule({
@@ -66,7 +71,10 @@ const routes: Routes = [
     AnimationsComponent,
     AreaOfCirclePipe,
     TrueOnlyPipe,
-    TimeAgoPipe
+    TimeAgoPipe,
+    MyViewChildComponent,
+    AnotherChildComponent,
+    SiblingComponent
   ],
   imports: [
     BrowserModule,
@@ -78,7 +86,7 @@ const routes: Routes = [
     HttpModule, 
     BrowserAnimationsModule
   ],
-  providers: [ApicallerService],
+  providers: [ApicallerService,InteractionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
