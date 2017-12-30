@@ -34,6 +34,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyViewChildComponent } from './my-view-child/my-view-child.component';
 import { AnotherChildComponent } from './another-child/another-child.component';
 import { SiblingComponent } from './sibling/sibling.component';
+import { CompAComponent } from './comp-a/comp-a.component';
+import { CompBComponent } from './comp-b/comp-b.component';
+import { CompCComponent } from './comp-c/comp-c.component';
+import { CompLoaderComponent } from './comp-loader/comp-loader.component';
+import { CompDirective } from './comp.directive';
 
 const routes: Routes = [
   { path: '', pathMatch:'full',redirectTo:'start' },
@@ -74,7 +79,12 @@ const routes: Routes = [
     TimeAgoPipe,
     MyViewChildComponent,
     AnotherChildComponent,
-    SiblingComponent
+    SiblingComponent,
+    CompAComponent,
+    CompBComponent,
+    CompCComponent,
+    CompLoaderComponent,
+    CompDirective
   ],
   imports: [
     BrowserModule,
@@ -87,6 +97,11 @@ const routes: Routes = [
     BrowserAnimationsModule
   ],
   providers: [ApicallerService,InteractionService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    CompAComponent,
+    CompBComponent,
+    CompCComponent
+  ]
 })
 export class AppModule { }
